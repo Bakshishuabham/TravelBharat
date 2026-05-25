@@ -12,18 +12,18 @@ const Place = require('./models/Place');
 const User = require('./models/User');
 
 const states = [
-  { name: 'Rajasthan', code: 'RJ', region: 'North', capital: 'Jaipur', description: 'The Land of Kings – famous for its majestic forts, golden deserts, and vibrant culture.', image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800' },
-  { name: 'Kerala', code: 'KL', region: 'South', capital: 'Thiruvananthapuram', description: "God's Own Country – blessed with serene backwaters, lush greenery, and pristine beaches.", image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800' },
-  { name: 'Uttar Pradesh', code: 'UP', region: 'North', capital: 'Lucknow', description: 'Heart of India – home to the Taj Mahal, Varanasi ghats, and ancient civilisations.', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800' },
-  { name: 'Goa', code: 'GA', region: 'West', capital: 'Panaji', description: 'India\'s beach paradise – golden sands, Portuguese heritage, and vibrant nightlife.', image: 'https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=800' },
-  { name: 'Himachal Pradesh', code: 'HP', region: 'North', capital: 'Shimla', description: 'The land of snow-capped peaks, apple orchards, and thrilling adventure sports.', image: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800' },
-  { name: 'Tamil Nadu', code: 'TN', region: 'South', capital: 'Chennai', description: 'Temple state of India – ancient Dravidian culture, grand temples, and coastal beauty.', image: 'https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800' },
-  { name: 'Maharashtra', code: 'MH', region: 'West', capital: 'Mumbai', description: 'The financial capital and home of Bollywood, diverse culture, and historical monuments.', image: 'https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800' },
-  { name: 'Uttarakhand', code: 'UK', region: 'North', capital: 'Dehradun', description: 'Devbhoomi – known for Hindu pilgrimage sites and the majestic Himalayas.', image: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800' },
-  { name: 'West Bengal', code: 'WB', region: 'East', capital: 'Kolkata', description: 'Cultural capital of India, rich in literature, arts, and sweet delicacies.', image: 'https://images.unsplash.com/photo-1536421469767-80559bb6f5e1?w=800' },
-  { name: 'Karnataka', code: 'KA', region: 'South', capital: 'Bengaluru', description: 'Blend of modern tech hubs and ancient temples like Hampi.', image: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800' },
-  { name: 'Delhi', code: 'DL', region: 'Union Territory', capital: 'New Delhi', description: 'The capital territory, brimming with history, politics, and amazing street food.', image: 'https://images.unsplash.com/photo-1597040663342-45b6af3d7489?w=800' },
-  { name: 'Puducherry', code: 'PY', region: 'Union Territory', capital: 'Pondicherry', description: 'French colonial settlement with beautiful promenades and spiritual ashrams.', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800' },
+  { name: 'Rajasthan', code: 'RJ', region: 'North', capital: 'Jaipur', description: 'The Land of Kings – famous for its majestic forts, golden deserts, and vibrant culture.', image: '/images/rajasthan.jpg' },
+  { name: 'Kerala', code: 'KL', region: 'South', capital: 'Thiruvananthapuram', description: "God's Own Country – blessed with serene backwaters, lush greenery, and pristine beaches.", image: '/images/kerala.jpg' },
+  { name: 'Uttar Pradesh', code: 'UP', region: 'North', capital: 'Lucknow', description: 'Heart of India – home to the Taj Mahal, Varanasi ghats, and ancient civilisations.', image: '/images/uttar-pradesh.jpg' },
+  { name: 'Goa', code: 'GA', region: 'West', capital: 'Panaji', description: 'India\'s beach paradise – golden sands, Portuguese heritage, and vibrant nightlife.', image: '/images/goa.jpg' },
+  { name: 'Himachal Pradesh', code: 'HP', region: 'North', capital: 'Shimla', description: 'The land of snow-capped peaks, apple orchards, and thrilling adventure sports.', image: '/images/himachal-pradesh.jpg' },
+  { name: 'Tamil Nadu', code: 'TN', region: 'South', capital: 'Chennai', description: 'Temple state of India – ancient Dravidian culture, grand temples, and coastal beauty.', image: '/images/tamil-nadu.jpg' },
+  { name: 'Maharashtra', code: 'MH', region: 'West', capital: 'Mumbai', description: 'The financial capital and home of Bollywood, diverse culture, and historical monuments.', image: '/images/maharashtra.jpg' },
+  { name: 'Uttarakhand', code: 'UK', region: 'North', capital: 'Dehradun', description: 'Devbhoomi – known for Hindu pilgrimage sites and the majestic Himalayas.', image: '/images/uttrakhand.jpg' },
+  { name: 'West Bengal', code: 'WB', region: 'East', capital: 'Kolkata', description: 'Cultural capital of India, rich in literature, arts, and sweet delicacies.', image: '/images/west-bengal.jpg' },
+  { name: 'Karnataka', code: 'KA', region: 'South', capital: 'Bengaluru', description: 'Blend of modern tech hubs and ancient temples like Hampi.', image: '/images/karnataka.jpg' },
+  { name: 'Delhi', code: 'DL', region: 'Union Territory', capital: 'New Delhi', description: 'The capital territory, brimming with history, politics, and amazing street food.', image: '/images/delhi.jpg' },
+  { name: 'Puducherry', code: 'PY', region: 'Union Territory', capital: 'Pondicherry', description: 'French colonial settlement with beautiful promenades and spiritual ashrams.', image: '/images/pondicherry.jpg' },
 ];
 
 const categories = [
@@ -67,32 +67,32 @@ const seedDB = async () => {
 
   // Cities
   const citiesData = [
-    { name: 'Jaipur', stateId: stateMap['Rajasthan'], description: 'The Pink City', image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800' },
-    { name: 'Udaipur', stateId: stateMap['Rajasthan'], description: 'City of Lakes', image: 'https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800' },
-    { name: 'Jodhpur', stateId: stateMap['Rajasthan'], description: 'Blue City', image: 'https://images.unsplash.com/photo-1590766740609-23f2b56c7e50?w=800' },
-    { name: 'Jaisalmer', stateId: stateMap['Rajasthan'], description: 'Golden City', image: 'https://images.unsplash.com/photo-1587922546307-776227941871?w=800' },
-    { name: 'Alleppey', stateId: stateMap['Kerala'], description: 'Venice of the East', image: 'https://images.unsplash.com/photo-1597922368-75d5e54a98f2?w=800' },
-    { name: 'Munnar', stateId: stateMap['Kerala'], description: 'Tea Garden City', image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800' },
-    { name: 'Kochi', stateId: stateMap['Kerala'], description: 'Queen of the Arabian Sea', image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800' },
-    { name: 'Agra', stateId: stateMap['Uttar Pradesh'], description: 'City of Taj Mahal', image: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800' },
-    { name: 'Varanasi', stateId: stateMap['Uttar Pradesh'], description: 'Spiritual Capital', image: 'https://images.unsplash.com/photo-1561361058-c24e09e3e577?w=800' },
-    { name: 'Mathura', stateId: stateMap['Uttar Pradesh'], description: 'Birthplace of Krishna', image: 'https://images.unsplash.com/photo-1627894483216-2138af692e32?w=800' },
-    { name: 'Panaji', stateId: stateMap['Goa'], description: 'Capital of Goa', image: 'https://images.unsplash.com/photo-1587922546307-776227941871?w=800' },
-    { name: 'Calangute', stateId: stateMap['Goa'], description: 'Queen of Beaches', image: 'https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=800' },
-    { name: 'Shimla', stateId: stateMap['Himachal Pradesh'], description: 'Queen of Hills', image: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800' },
-    { name: 'Manali', stateId: stateMap['Himachal Pradesh'], description: 'Valley of Gods', image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800' },
-    { name: 'Chennai', stateId: stateMap['Tamil Nadu'], description: 'Gateway of South India', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800' },
-    { name: 'Madurai', stateId: stateMap['Tamil Nadu'], description: 'Temple City', image: 'https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800' },
-    { name: 'Mumbai', stateId: stateMap['Maharashtra'], description: 'City of Dreams', image: 'https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800' },
-    { name: 'Pune', stateId: stateMap['Maharashtra'], description: 'Oxford of the East', image: 'https://images.unsplash.com/photo-1572782252655-9c1c6c9b3842?w=800' },
-    { name: 'Dehradun', stateId: stateMap['Uttarakhand'], description: 'Doon Valley', image: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800' },
-    { name: 'Rishikesh', stateId: stateMap['Uttarakhand'], description: 'Yoga Capital', image: 'https://images.unsplash.com/photo-1587922546307-776227941871?w=800' },
-    { name: 'Kolkata', stateId: stateMap['West Bengal'], description: 'City of Joy', image: 'https://images.unsplash.com/photo-1536421469767-80559bb6f5e1?w=800' },
-    { name: 'Darjeeling', stateId: stateMap['West Bengal'], description: 'Queen of the Himalayas', image: 'https://images.unsplash.com/photo-1622308644420-55163543b928?w=800' },
-    { name: 'Bengaluru', stateId: stateMap['Karnataka'], description: 'Silicon Valley of India', image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800' },
-    { name: 'Mysore', stateId: stateMap['Karnataka'], description: 'City of Palaces', image: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800' },
-    { name: 'New Delhi', stateId: stateMap['Delhi'], description: 'Capital City', image: 'https://images.unsplash.com/photo-1597040663342-45b6af3d7489?w=800' },
-    { name: 'Pondicherry', stateId: stateMap['Puducherry'], description: 'French Riviera of the East', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800' },
+    { name: 'Jaipur', stateId: stateMap['Rajasthan'], description: 'The Pink City', image: '/images/hawa-mahal.jpg' },
+    { name: 'Udaipur', stateId: stateMap['Rajasthan'], description: 'City of Lakes', image: '/images/lake-pichola.jpg' },
+    { name: 'Jodhpur', stateId: stateMap['Rajasthan'], description: 'Blue City', image: '/images/mehrangarh-fort.jpg' },
+    { name: 'Jaisalmer', stateId: stateMap['Rajasthan'], description: 'Golden City', image: '/images/jaisalmer-fort.jpg' },
+    { name: 'Alleppey', stateId: stateMap['Kerala'], description: 'Venice of the East', image: '/images/alleppey-backwaters.jpg' },
+    { name: 'Munnar', stateId: stateMap['Kerala'], description: 'Tea Garden City', image: '/images/munnar-tea-garden.jpg' },
+    { name: 'Kochi', stateId: stateMap['Kerala'], description: 'Queen of the Arabian Sea', image: '/images/kerala.jpg' },
+    { name: 'Agra', stateId: stateMap['Uttar Pradesh'], description: 'City of Taj Mahal', image: '/images/taj-mahal.jpeg' },
+    { name: 'Varanasi', stateId: stateMap['Uttar Pradesh'], description: 'Spiritual Capital', image: '/images/varanasi-ghat.jpg' },
+    { name: 'Mathura', stateId: stateMap['Uttar Pradesh'], description: 'Birthplace of Krishna', image: '/images/uttar-pradesh.jpg' },
+    { name: 'Panaji', stateId: stateMap['Goa'], description: 'Capital of Goa', image: '/images/goa.jpg' },
+    { name: 'Calangute', stateId: stateMap['Goa'], description: 'Queen of Beaches', image: '/images/calangute-beach.jpg' },
+    { name: 'Shimla', stateId: stateMap['Himachal Pradesh'], description: 'Queen of Hills', image: '/images/shimla-mall-road.jpg' },
+    { name: 'Manali', stateId: stateMap['Himachal Pradesh'], description: 'Valley of Gods', image: '/images/rohtang-pass.jpg' },
+    { name: 'Chennai', stateId: stateMap['Tamil Nadu'], description: 'Gateway of South India', image: '/images/marina-beach.jpg' },
+    { name: 'Madurai', stateId: stateMap['Tamil Nadu'], description: 'Temple City', image: '/images/meenakshi-amman-temple.jpg' },
+    { name: 'Mumbai', stateId: stateMap['Maharashtra'], description: 'City of Dreams', image: '/images/gateway-of-India.jpg' },
+    { name: 'Pune', stateId: stateMap['Maharashtra'], description: 'Oxford of the East', image: '/images/maharashtra.jpg' },
+    { name: 'Dehradun', stateId: stateMap['Uttarakhand'], description: 'Doon Valley', image: '/images/uttrakhand.jpg' },
+    { name: 'Rishikesh', stateId: stateMap['Uttarakhand'], description: 'Yoga Capital', image: '/images/uttrakhand.jpg' },
+    { name: 'Kolkata', stateId: stateMap['West Bengal'], description: 'City of Joy', image: '/images/victoria-memorial.jpg' },
+    { name: 'Darjeeling', stateId: stateMap['West Bengal'], description: 'Queen of the Himalayas', image: '/images/west-bengal.jpg' },
+    { name: 'Bengaluru', stateId: stateMap['Karnataka'], description: 'Silicon Valley of India', image: '/images/karnataka.jpg' },
+    { name: 'Mysore', stateId: stateMap['Karnataka'], description: 'City of Palaces', image: '/images/mysore-palace.jpg' },
+    { name: 'New Delhi', stateId: stateMap['Delhi'], description: 'Capital City', image: '/images/red-fort.jpg' },
+    { name: 'Pondicherry', stateId: stateMap['Puducherry'], description: 'French Riviera of the East', image: '/images/promenade-beach.jpg' },
   ];
 
   const insertedCities = await City.insertMany(citiesData);
@@ -110,7 +110,7 @@ const seedDB = async () => {
       historicalSignificance: 'Built in 1592 by Raja Man Singh I, it served as the royal residence of the Rajput Maharajas.',
       bestTimeToVisit: 'October to March', entryFee: '₹200 (Indians), ₹500 (Foreigners)', timings: '8:00 AM – 5:30 PM (Daily)',
       nearbyAttractions: ['Jaigarh Fort', 'Nahargarh Fort', 'Jal Mahal'], location: 'https://maps.google.com/?q=Amber+Fort+Jaipur',
-      images: ['https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800','https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800'],
+      images: ['/images/amber-fort.jpg', '/images/hawa-mahal.jpg'],
       isFeatured: true, rating: 4.8,
     },
     {
@@ -120,7 +120,7 @@ const seedDB = async () => {
       historicalSignificance: 'Constructed in 1799 as an extension of the City Palace for royal women to observe street life in purdah.',
       bestTimeToVisit: 'October to March', entryFee: '₹50 (Indians), ₹200 (Foreigners)', timings: '9:00 AM – 4:30 PM (Daily)',
       nearbyAttractions: ['City Palace', 'Jantar Mantar', 'Johari Bazaar'], location: 'https://maps.google.com/?q=Hawa+Mahal+Jaipur',
-      images: ['https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800','https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800'],
+      images: ['/images/hawa-mahal.jpg', '/images/amber-fort.jpg'],
       isFeatured: true, rating: 4.7,
     },
     {
@@ -130,7 +130,7 @@ const seedDB = async () => {
       historicalSignificance: 'Created in 1362 AD during the reign of Maharana Lakha, later expanded by Udai Singh II.',
       bestTimeToVisit: 'October to March', entryFee: '₹400 (Boat Ride)', timings: 'Sunrise to Sunset',
       nearbyAttractions: ['City Palace Udaipur', 'Jag Mandir', 'Bagore Ki Haveli'], location: 'https://maps.google.com/?q=Lake+Pichola+Udaipur',
-      images: ['https://images.unsplash.com/photo-1591137894885-21a33c71cd13?w=800','https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800'],
+      images: ['/images/lake-pichola.jpg', '/images/rajasthan.jpg'],
       isFeatured: true, rating: 4.9,
     },
     {
@@ -140,7 +140,7 @@ const seedDB = async () => {
       historicalSignificance: 'Built in 1459 by Rao Jodha, the founder of Jodhpur, it has never been conquered in battle.',
       bestTimeToVisit: 'October to February', entryFee: '₹100 (Indians), ₹600 (Foreigners)', timings: '9:00 AM – 5:00 PM (Daily)',
       nearbyAttractions: ['Jaswant Thada', 'Umaid Bhawan Palace', 'Clock Tower'], location: 'https://maps.google.com/?q=Mehrangarh+Fort+Jodhpur',
-      images: ['https://images.unsplash.com/photo-1590766740609-23f2b56c7e50?w=800','https://images.unsplash.com/photo-1585136917228-45b65e79aed2?w=800'],
+      images: ['/images/mehrangarh-fort.jpg', '/images/rajasthan.jpg'],
       isFeatured: false, rating: 4.8,
     },
     {
@@ -150,7 +150,7 @@ const seedDB = async () => {
       historicalSignificance: 'Built in 1156 AD by Rawal Jaisal, it is one of the few living forts in the world.',
       bestTimeToVisit: 'November to February', entryFee: '₹100 (Indians), ₹250 (Foreigners)', timings: '6:00 AM – 6:00 PM (Daily)',
       nearbyAttractions: ['Sam Sand Dunes', 'Patwon ki Haveli', 'Gadisar Lake'], location: 'https://maps.google.com/?q=Jaisalmer+Fort',
-      images: ['https://images.unsplash.com/photo-1587922546307-776227941871?w=800','https://images.unsplash.com/photo-1611254578894-b75e5c4a8e02?w=800'],
+      images: ['/images/jaisalmer-fort.jpg', '/images/rajasthan.jpg'],
       isFeatured: false, rating: 4.6,
     },
     {
@@ -160,7 +160,7 @@ const seedDB = async () => {
       historicalSignificance: 'The backwater network was historically used for trade and transport by local communities.',
       bestTimeToVisit: 'November to February', entryFee: '₹6,000–₹15,000 (Houseboat/night)', timings: 'All day',
       nearbyAttractions: ['Kumarakom Bird Sanctuary', 'Marari Beach', 'Krishnapuram Palace'], location: 'https://maps.google.com/?q=Alleppey+Backwaters+Kerala',
-      images: ['https://images.unsplash.com/photo-1597922368-75d5e54a98f2?w=800','https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800'],
+      images: ['/images/alleppey-backwaters.jpg', '/images/kerala.jpg'],
       isFeatured: true, rating: 4.9,
     },
     {
@@ -170,7 +170,7 @@ const seedDB = async () => {
       historicalSignificance: 'Tea cultivation was introduced during the British era; Munnar was a popular retreat for British colonists.',
       bestTimeToVisit: 'September to May', entryFee: 'Free (Tea Museum: ₹75)', timings: 'All day',
       nearbyAttractions: ['Eravikulam National Park', 'Top Station', 'Mattupetty Dam'], location: 'https://maps.google.com/?q=Munnar+Tea+Gardens',
-      images: ['https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800','https://images.unsplash.com/photo-1564828933425-3e82ec38d7fb?w=800'],
+      images: ['/images/munnar-tea-garden.jpg', '/images/kerala.jpg'],
       isFeatured: false, rating: 4.7,
     },
     {
@@ -180,7 +180,7 @@ const seedDB = async () => {
       historicalSignificance: 'Built between 1632–1653 by Emperor Shah Jahan as a tribute to his wife Mumtaz Mahal. Designated a UNESCO World Heritage Site in 1983.',
       bestTimeToVisit: 'October to March', entryFee: '₹250 (Indians), ₹1,300 (Foreigners)', timings: '6:00 AM – 6:30 PM (Closed Friday)',
       nearbyAttractions: ['Agra Fort', 'Fatehpur Sikri', 'Itmad-ud-Daula'], location: 'https://maps.google.com/?q=Taj+Mahal+Agra',
-      images: ['https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800','https://images.unsplash.com/photo-1548013146-72479768bada?w=800'],
+      images: ['/images/taj-mahal.jpeg', '/images/uttar-pradesh.jpg'],
       isFeatured: true, rating: 5.0,
     },
     {
@@ -190,7 +190,7 @@ const seedDB = async () => {
       historicalSignificance: 'One of the world\'s oldest continuously inhabited cities, mentioned in ancient Vedic texts; considered sacred by multiple religions.',
       bestTimeToVisit: 'October to March', entryFee: 'Free (Boat ride: ₹200–₹500)', timings: '24 hours (Aarti at sunrise/sunset)',
       nearbyAttractions: ['Kashi Vishwanath Temple', 'Sarnath', 'Ramnagar Fort'], location: 'https://maps.google.com/?q=Dashashwamedh+Ghat+Varanasi',
-      images: ['https://images.unsplash.com/photo-1561361058-c24e09e3e577?w=800','https://images.unsplash.com/photo-1583791031153-d55e79f7f115?w=800'],
+      images: ['/images/varanasi-ghat.jpg', '/images/uttar-pradesh.jpg'],
       isFeatured: true, rating: 4.8,
     },
     {
@@ -200,7 +200,7 @@ const seedDB = async () => {
       historicalSignificance: 'Calangute was frequented by hippies in the 1960s–70s, giving Goa its bohemian reputation.',
       bestTimeToVisit: 'November to February', entryFee: 'Free (Water sports: ₹500–₹2,000)', timings: 'All day',
       nearbyAttractions: ['Baga Beach', 'Anjuna Flea Market', 'Fort Aguada'], location: 'https://maps.google.com/?q=Calangute+Beach+Goa',
-      images: ['https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=800','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800'],
+      images: ['/images/calangute-beach.jpg', '/images/goa.jpg'],
       isFeatured: true, rating: 4.5,
     },
     {
@@ -210,7 +210,7 @@ const seedDB = async () => {
       historicalSignificance: 'Built by the Portuguese in 1612 to guard against Dutch and Maratha invasions; one of the most prominent forts in Goa.',
       bestTimeToVisit: 'November to March', entryFee: '₹30 (Indians)', timings: '9:30 AM – 6:00 PM (Daily)',
       nearbyAttractions: ['Calangute Beach', 'Candolim Beach', 'Chapora Fort'], location: 'https://maps.google.com/?q=Fort+Aguada+Goa',
-      images: ['https://images.unsplash.com/photo-1587474260580-58f2730cd5de?w=800','https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800'],
+      images: ['/images/fort-aguada.jpg', '/images/goa.jpg'],
       isFeatured: false, rating: 4.4,
     },
     {
@@ -220,7 +220,7 @@ const seedDB = async () => {
       historicalSignificance: 'Historically the main trade route between Kullu Valley and Lahaul-Spiti.',
       bestTimeToVisit: 'May to October', entryFee: '₹550 (Permit fee)', timings: '8:00 AM – 5:00 PM',
       nearbyAttractions: ['Solang Valley', 'Beas Kund', 'Hampta Pass'], location: 'https://maps.google.com/?q=Rohtang+Pass+Manali',
-      images: ['https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800','https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800'],
+      images: ['/images/rohtang-pass.jpg', '/images/himachal-pradesh.jpg'],
       isFeatured: true, rating: 4.6,
     },
     {
@@ -230,7 +230,7 @@ const seedDB = async () => {
       historicalSignificance: 'Shimla served as the summer capital of British India from 1864; Mall Road was the social hub of colonial administrators.',
       bestTimeToVisit: 'October to June', entryFee: 'Free', timings: 'All day',
       nearbyAttractions: ['Jakhu Temple', 'Kufri', 'Chadwick Falls'], location: 'https://maps.google.com/?q=Mall+Road+Shimla',
-      images: ['https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800','https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800'],
+      images: ['/images/shimla-mall-road.jpg', '/images/himachal-pradesh.jpg'],
       isFeatured: false, rating: 4.3,
     },
     {
@@ -240,7 +240,7 @@ const seedDB = async () => {
       historicalSignificance: 'Originally built by Kulasekara Pandya (6th–9th centuries), the temple underwent major construction by Nayak rulers in the 16th–17th centuries.',
       bestTimeToVisit: 'October to March', entryFee: 'Free (Camera: ₹50)', timings: '5:00 AM – 12:30 PM, 4:00 PM – 10:00 PM',
       nearbyAttractions: ['Thirumalai Nayakkar Palace', 'Gandhi Museum', 'Alagar Kovil'], location: 'https://maps.google.com/?q=Meenakshi+Temple+Madurai',
-      images: ['https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800','https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800'],
+      images: ['/images/meenakshi-amman-temple.jpg', '/images/tamil-nadu.jpg'],
       isFeatured: true, rating: 4.9,
     },
     {
@@ -250,7 +250,7 @@ const seedDB = async () => {
       historicalSignificance: 'Developed during British rule; several statues of Tamil leaders and freedom fighters line the beach.',
       bestTimeToVisit: 'November to February', entryFee: 'Free', timings: 'All day (Swimming restricted)',
       nearbyAttractions: ['Fort St. George', 'Kapaleeshwarar Temple', 'San Thome Cathedral'], location: 'https://maps.google.com/?q=Marina+Beach+Chennai',
-      images: ['https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800'],
+      images: ['/images/marina-beach.jpg', '/images/tamil-nadu.jpg'],
       isFeatured: false, rating: 4.4,
     },
     {
@@ -258,7 +258,7 @@ const seedDB = async () => {
       description: 'The Gateway of India is an arch-monument built in the early 20th century to commemorate the landing of King-Emperor George V. It overlooks the Arabian Sea and is Mumbai\'s most famous landmark.',
       bestTimeToVisit: 'October to March', entryFee: 'Free', timings: '24 hours',
       location: 'https://maps.google.com/?q=Gateway+of+India',
-      images: ['https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=800','https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800'],
+      images: ['/images/gateway-of-India.jpg', '/images/maharashtra.jpg'],
       isFeatured: true, rating: 4.6,
     },
     {
@@ -266,7 +266,7 @@ const seedDB = async () => {
       description: 'The Mysore Palace is a historical palace and a royal residence. It is one of the most famous tourist attractions in India after the Taj Mahal, known for its incredible Indo-Saracenic architecture.',
       bestTimeToVisit: 'October to March', entryFee: '₹100 (Indians)', timings: '10:00 AM – 5:30 PM',
       location: 'https://maps.google.com/?q=Mysore+Palace',
-      images: ['https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800'],
+      images: ['/images/mysore-palace.jpg', '/images/karnataka.jpg'],
       isFeatured: true, rating: 4.8,
     },
     {
@@ -274,7 +274,7 @@ const seedDB = async () => {
       description: 'The Red Fort is a historic fort in the city of Delhi that served as the main residence of the Mughal Emperors. Every year on Independence Day, the Prime Minister hoists the national flag here.',
       bestTimeToVisit: 'October to March', entryFee: '₹35 (Indians)', timings: '9:30 AM – 4:30 PM (Closed Monday)',
       location: 'https://maps.google.com/?q=Red+Fort+Delhi',
-      images: ['https://images.unsplash.com/photo-1597040663342-45b6af3d7489?w=800','https://images.unsplash.com/photo-1587474260580-58f2730cd5de?w=800'],
+      images: ['/images/red-fort.jpg', '/images/delhi.jpg'],
       isFeatured: true, rating: 4.7,
     },
     {
@@ -282,7 +282,7 @@ const seedDB = async () => {
       description: 'The Victoria Memorial is a large marble building in Central Kolkata, built between 1906 and 1921. It is dedicated to the memory of Queen Victoria and is now a museum under the Ministry of Culture.',
       bestTimeToVisit: 'October to March', entryFee: '₹30 (Indians)', timings: '10:00 AM – 5:00 PM (Closed Monday)',
       location: 'https://maps.google.com/?q=Victoria+Memorial+Kolkata',
-      images: ['https://images.unsplash.com/photo-1536421469767-80559bb6f5e1?w=800','https://images.unsplash.com/photo-1558431382-27e303142255?w=800'],
+      images: ['/images/victoria-memorial.jpg', '/images/west-bengal.jpg'],
       isFeatured: false, rating: 4.6,
     },
     {
@@ -290,7 +290,7 @@ const seedDB = async () => {
       description: 'A popular stretch of beachfront in the city of Puducherry, along the Bay of Bengal. It is a 1.2-kilometre-long stretch, starting from War Memorial and ending at Dupleix Park.',
       bestTimeToVisit: 'October to March', entryFee: 'Free', timings: '24 hours',
       location: 'https://maps.google.com/?q=Promenade+Beach',
-      images: ['https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800'],
+      images: ['/images/promenade-beach.jpg', '/images/pondicherry.jpg'],
       isFeatured: false, rating: 4.5,
     },
   ];
